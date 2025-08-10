@@ -16,7 +16,9 @@ public class AccountBalanceCalculator {
             } else if (t.getType() == TransactionType.WITHDRAWAL) {
                 balance -= t.getAmount();
             }
-
+        }
+        if (balance < 0) {
+            throw new IllegalArgumentException("Balance cannot be negative");
         }
         return balance;
     }
