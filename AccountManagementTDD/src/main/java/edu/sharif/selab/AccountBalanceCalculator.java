@@ -20,6 +20,7 @@ public class AccountBalanceCalculator {
         if (balance < 0) {
             throw new IllegalArgumentException("Balance cannot be negative");
         }
+        transactionHistory = new ArrayList<>(transactions);
         return balance;
     }
 
